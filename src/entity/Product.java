@@ -1,17 +1,17 @@
 package entity;
 
 public class Product {
-    private int ProductId;
+    private int ProductID;
     private String SKU;
     private String Product;
     private float Price;
 
-    public int getProductId() {
-        return ProductId;
+    public int getProductID() {
+        return ProductID;
     }
 
-    public void setProductId(int productId) {
-        ProductId = productId;
+    public void setProductID(int productID) {
+        ProductID = productID;
     }
 
     public String getSKU() {
