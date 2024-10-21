@@ -5,23 +5,24 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import connection.DatabaseConnection;
-import entity.Seller;
+import entity.Sale;
 
-public class SellerDAO {
+public class SaleDAO {
     private Connection conn;
 
-    public SellerDAO() throws SQLException {
+    public SaleDAO() throws SQLException {
         this.conn = DatabaseConnection.getConnection();
     }
 
-    public void insert(Seller sellers) {
-        String sql = "INSERT INTO Seller(sellers) VALUES (?)";
+    public void insert(Sale sales) {
+        String sql = "INSERT INTO Sale(sales) VALUES (?, ?)";
         try {
             PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1, sellers.getSeller());
+            stmt.setString(1, sales.getDate());
+            stmt.setFloat(2, sales.getTotal());
             stmt.execute();
         } catch (java.sql.SQLException e) {
-            System.out.println("Erro ao inserir vendedor: " + e.getMessage());
+            System.out.println("Erro ao inserir venda: " + e.getMessage());
         }
     }
 }

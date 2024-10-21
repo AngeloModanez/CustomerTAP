@@ -24,7 +24,7 @@ public class CustomerDAO {
             stmt.setString(4, customers.getStatus());
             stmt.execute();
         } catch (java.sql.SQLException e) {
-            System.out.println("Erro ao inserir venda: " + e.getMessage());
+            System.out.println("Erro ao inserir cliente: " + e.getMessage());
         }
     }
 }

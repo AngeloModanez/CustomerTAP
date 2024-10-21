@@ -23,7 +23,7 @@ public class ProductDAO {
             stmt.setFloat(3, products.getPrice());
             stmt.execute();
         } catch (java.sql.SQLException e) {
-            System.out.println("Erro ao inserir venda: " + e.getMessage());
+            System.out.println("Erro ao inserir produto: " + e.getMessage());
         }
     }
 }
