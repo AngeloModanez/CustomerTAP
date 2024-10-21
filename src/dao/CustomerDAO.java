@@ -15,7 +15,7 @@ public class CustomerDAO {
     }
 
     public void insert(Customer customers) {
-        String sql = "INSERT INTO Customer(customers) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO Customers(customers) VALUES (?, ?, ?, ?)";
         try {
             PreparedStatement stmt = this.conn.prepareStatement(sql);
             stmt.setString(1, customers.getCustomer());

@@ -2,7 +2,7 @@ package entity;
 
 public class Sale {
     private int SaleID;
-    private int SallerID;
+    private int SellerID;
     private int CustomerID;
     private String Date;
     private float Total;
@@ -15,12 +15,12 @@ public class Sale {
         SaleID = saleID;
     }
 
-    public int getSallerID() {
-        return SallerID;
+    public int getSellerID() {
+        return SellerID;
     }
 
-    public void setSallerID(int sallerID) {
-        SallerID = sallerID;
+    public void setSellerID(int sellerID) {
+        SellerID = sellerID;
     }
 
     public int getCustomerID() {

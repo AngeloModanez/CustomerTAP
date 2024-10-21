@@ -15,7 +15,7 @@ public class ProductDAO {
     }
 
     public void insert(Product products) {
-        String sql = "INSERT INTO Product(products) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO Products(products) VALUES (?, ?, ?)";
         try {
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, products.getSKU());

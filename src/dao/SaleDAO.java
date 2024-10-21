@@ -15,7 +15,7 @@ public class SaleDAO {
     }
 
     public void insert(Sale sales) {
-        String sql = "INSERT INTO Sale(sales) VALUES (?, ?)";
+        String sql = "INSERT INTO Sales(sales) VALUES (?, ?)";
         try {
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, sales.getDate());

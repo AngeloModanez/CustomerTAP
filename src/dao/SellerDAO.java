@@ -15,7 +15,7 @@ public class SellerDAO {
     }
 
     public void insert(Seller sellers) {
-        String sql = "INSERT INTO Seller(sellers) VALUES (?)";
+        String sql = "INSERT INTO Sellers(sellers) VALUES (?)";
         try {
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, sellers.getSeller());

@@ -14,15 +14,15 @@ public class SaleItemDAO {
         this.conn = DatabaseConnection.getConnection();
     }
 
-    public void insert(SaleItem salesItens) {
-        String sql = "INSERT INTO SaleItem(salesItens) VALUES (?, ?, ?, ?, ?)";
+    public void insert(SaleItem salesItems) {
+        String sql = "INSERT INTO SalesItems(salesItems) VALUES (?, ?, ?, ?, ?)";
         try {
             PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setInt(1, salesItens.getQuantity());
-            stmt.setFloat(2, salesItens.getUnitValue());
-            stmt.setFloat(3, salesItens.getTotalValue());
-            stmt.setFloat(4, salesItens.getDiscount());
-            stmt.setFloat(5, salesItens.getTotalDiscount());
+            stmt.setInt(1, salesItems.getQuantity());
+            stmt.setFloat(2, salesItems.getUnitValue());
+            stmt.setFloat(3, salesItems.getTotalValue());
+            stmt.setFloat(4, salesItems.getDiscount());
+            stmt.setFloat(5, salesItems.getTotalDiscount());
             stmt.execute();
         } catch (java.sql.SQLException e) {
             System.out.println("Erro ao inserir item de vendas: " + e.getMessage());
