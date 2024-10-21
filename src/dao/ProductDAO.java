@@ -1,21 +1,20 @@
 package dao;
 
 import connection.DatabaseConnection;
-import entity.Customer;
+import entity.Product;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-public class CustomerDAO {
-    public void insert(Customer customers) {
-        String sql = "INSERT INTO Customer(customers) VALUES (?, ?, ?, ?)";
+public class ProductDAO {
+    public void insert(Product products) {
+        String sql = "INSERT INTO Product(products) VALUES (?, ?, ?)";
 
         try (Connection conn = DatabaseConnection.getConnection();
                 PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, customers.getCustomer());
-            stmt.setString(2, customers.getState());
-            stmt.setString(3, customers.getGender().name());
-            stmt.setString(4, customers.getStatus());
+            stmt.setString(1, products.getSKU());
+            stmt.setString(2, products.getProduct());
+            stmt.setFloat(3, products.getPrice());
             stmt.execute();
         } catch (java.sql.SQLException e) {
             System.out.println("Erro ao inserir venda: " + e.getMessage());
