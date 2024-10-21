@@ -1,12 +1,10 @@
 package entity;
 
-import java.util.Date;
-
 public class Sale {
     private int SaleID;
     private int SallerID;
     private int CustomerID;
-    private Date Date;
+    private String Date;
     private float Total;
 
     public int getSaleID() {
@@ -33,11 +31,11 @@ public class Sale {
         CustomerID = customerID;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return Date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         Date = date;
     }
 

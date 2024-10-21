@@ -5,20 +5,20 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import connection.DatabaseConnection;
-import entity.Saller;
+import entity.Seller;
 
-public class SallerDAO {
+public class SellerDAO {
     private Connection conn;
 
-    public SallerDAO() throws SQLException {
+    public SellerDAO() throws SQLException {
         this.conn = DatabaseConnection.getConnection();
     }
 
-    public void insert(Saller sallers) {
-        String sql = "INSERT INTO Saller(sallers) VALUES (?)";
+    public void insert(Seller sellers) {
+        String sql = "INSERT INTO Seller(sellers) VALUES (?)";
         try {
             PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1, sallers.getSaller());
+            stmt.setString(1, sellers.getSeller());
             stmt.execute();
         } catch (java.sql.SQLException e) {
             System.out.println("Erro ao inserir venda: " + e.getMessage());
